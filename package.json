@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@hendt/ebay-api": "^5.1.1",
+    "axios": "^0.24.0",
+    "btoa": "^1.2.1",
+    "ebay-oauth-nodejs-client": "^1.2.1",
+    "express": "^4.17.1",
+    "qs": "^6.10.2"
+  }
+}
