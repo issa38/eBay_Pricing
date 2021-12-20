@@ -24,7 +24,7 @@ app.get('/item', (req, res) => {
 
 app.get("/login/ebay", (req, res) => {
     //Change this URL with the relevant items. CLient ID and URI etc...
-    res.redirect(`https://auth.sandbox.ebay.com/oauth2/authorize?client_id=IsaiahMo-PricingA-SBX-a7e95348f-859bfa14&redirect_uri=Isaiah_Moragn-IsaiahMo-Pricin-olkmpcwzh&response_type=code`);
+    res.redirect(`https://auth.sandbox.ebay.com/oauth2/authorize?client_id= *****CHANGE ME ******* &redirect_uri= *****CHANGE ME ******* &response_type=code`);
 });
 
 app.get("/auth/ebay/callback", (req, res) => {
@@ -35,7 +35,7 @@ app.get("/auth/ebay/callback", (req, res) => {
                 "Content-Type": "application/x-www-form-urlencoded",
                 Authorization: "Basic " +
                     btoa(
-                        `IsaiahMo-PricingA-SBX-a7e95348f-859bfa14` + `:` + `SBX-7e95348f5fb8-9289-4276-8ec4-34e6`
+                        ` *****CHANGE ME ******* PUT IN YOUR CLIENT-ID ` + `:` + ` *****CHANGE ME ******* PUT IN YOUR CLIENT-SECRET `
                     )
             },
             data: qs.stringify({
@@ -44,7 +44,7 @@ app.get("/auth/ebay/callback", (req, res) => {
                 code: req.query.code,
                 // this is set in your dev account, also called RuName
 
-                redirect_uri: "Isaiah_Moragn-IsaiahMo-Pricin-olkmpcwzh"
+                redirect_uri: "*****CHANGE ME *******"
             })
         })
         .then(response => console.log(response))
