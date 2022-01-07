@@ -5,12 +5,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HIHI</title>
-    <link rel='stylesheet' href="../styles.css">
+    <title>Product</title>
+    <link rel='stylesheet' href="./styles.css">
 </head>
 
 <body>
-
+    <nav>
+        <ul>
+            <li><a href='/'>Home</a></li>
+            <li><a href="/product">Product</a></li>
+            <li><a href="/login/ebay">oAuth Token</a></li>
+        </ul>
+    </nav>
+    <h1>SUCCESSFULLY CONNECTED AND RECEIVED JSON FILE</h1>
+    <p>The Connection was successful and the console should be displaying a list of items parse from EBAY</p>
+    <br>
+    <hr>
+    <h3>Display Products</h3>
+    <div id="items"></div>
 </body>
+
+<script>
+    fetch("./test.json")
+        .then(response => response.json())
+        .then(data => {
+            console.log(data.itemSummaries)
+            document.querySelector("#items").innerText = JSON.stringify(data.itemSummaries)
+        })
+</script>
 
 </html>
