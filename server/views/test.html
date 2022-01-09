@@ -9,7 +9,7 @@
     <link rel='stylesheet' href="./styles.css">
 </head>
 
-<body>
+<body id="product">
     <nav>
         <ul>
             <li><a href='/'>Home</a></li>
@@ -22,19 +22,19 @@
     <br>
     <hr>
     <h3>Display Products</h3>
-    <div id="items"></div>
+    <pre class="prettyprint linenums">
+            <div id="items"></div>
+    </pre>
 </body>
 
 <script>
-    //Pulling the JSON data that is posted from the App.js code
     fetch("./test.json")
         .then(response => response.json())
         .then(data => {
-            //logs only the relevant info regarding the eBay listings
             console.log(data.itemSummaries)
-            document.querySelector("#items").innerText = JSON.stringify(data.itemSummaries, null, '\t)
-                //The last part just beautifies the JSON file so it isnt one huge string
+            document.querySelector("#items").innerText = JSON.stringify(data.itemSummaries, null, '\t')
         })
 </script>
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 
 </html>
